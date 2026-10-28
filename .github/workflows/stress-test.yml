@@ -1,0 +1,25 @@
+name: K6 Stress Test
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  stress-test:
+    name: Run k6 Stress Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup k6
+        uses: grafana/setup-k6-action@v1
+
+      - name: Run k6 Stress Test
+        uses: grafana/run-k6-action@v1
+        with:
+          path: stress-test.js
