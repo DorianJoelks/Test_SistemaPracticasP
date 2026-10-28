@@ -3,8 +3,8 @@ import { check, sleep } from 'k6';
 
 export const options = {
     stages: [
-        { duration: '1m', target: 1000 },  // Rampa de subida
-        { duration: '3m', target: 1000 },  // Mantenimiento de carga
+        { duration: '1m', target: 1500 },  // Rampa de subida
+        { duration: '3m', target: 1500 },  // Mantenimiento de carga
         { duration: '1m', target: 0 },   // Rampa de bajada
     ],
     thresholds: {
